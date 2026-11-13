@@ -1,0 +1,23 @@
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+jobs:
+  run_docker:
+    name: running the databe on docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run docker compose
+        uses: hoverkraft-tech/compose-action@v3.2.0
+        with:
+          compose-file: "./docker-compose.yaml"
+        env:
+          MYSQL_ROOT_PASSWORD:  ${{ secrets.MYSQL_ROOT_PASSWORD }}
+          MYSQL_DATABASE:  ${{ secrets.MYSQL_DATABASE }}
+          MYSQL_USER:  ${{ secrets.MYSQL_USER }}
+          MYSQL_PASSWORD:  ${{ secrets.MYSQL_PASSWORD }}
+          MONGO_INITDB_ROOT_USERNAME: ${{secrets.MONGO_INITDB_ROOT_USERNAME}}
+          MONGO_INITDB_ROOT_PASSWORD: ${{secrets.MONGO_INITDB_ROOT_PASSWORD}}
+      
+    
