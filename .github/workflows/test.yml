@@ -35,6 +35,8 @@ jobs:
 
       - name: Run the backend
         working-directory: ./backend
+        env:
+          DB_URL: mysql://${{secrets.MYSQL_USER}}:${{secrets.MYSQL_PASSWORD}}@localhost:3306/${{secrets.MYSQL_DATABASE}}
         run: npm run start
 
       

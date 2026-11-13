@@ -4,7 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 
 // Load env vars
-process.loadEnvFile('./.env');
+process.loadEnvFile('./.env') || "";
 
 const { sequelize: db } = require('./config/database');
 const { initModels } = require('./models');
