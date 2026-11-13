@@ -22,7 +22,14 @@ jobs:
           MYSQL_PASSWORD:  ${{ secrets.MYSQL_PASSWORD }}
           MONGO_INITDB_ROOT_USERNAME: ${{secrets.MONGO_INITDB_ROOT_USERNAME}}
           MONGO_INITDB_ROOT_PASSWORD: ${{secrets.MONGO_INITDB_ROOT_PASSWORD}}
-      
+    
+  run_backend:
+    name: running the backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7.0.1
+
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
@@ -37,7 +44,31 @@ jobs:
         working-directory: ./backend
         env:
           DB_URL: mysql://${{secrets.MYSQL_USER}}:${{secrets.MYSQL_PASSWORD}}@localhost:3306/${{secrets.MYSQL_DATABASE}}
-        run: npm run start
+        run: npm run start &
+  
+  build:
+    name: building the frontend
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v7.0.1
+
+      - name: Install frontend dependencies
+        working-directory: ./frontend
+        run: npm ci
+
+      - name: Build the frontend
+        working-directory: ./frontend
+        run: npx vite build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
 
       
     
