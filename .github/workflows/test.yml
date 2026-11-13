@@ -11,7 +11,7 @@ jobs:
       - name: Run docker compose
         uses: hoverkraft-tech/compose-action@v3.2.0
         with:
-          compose-file: "./docker-compose.yaml"
+          compose-file: "../docker-compose.yamll"
         env:
           MYSQL_ROOT_PASSWORD:  ${{ secrets.MYSQL_ROOT_PASSWORD }}
           MYSQL_DATABASE:  ${{ secrets.MYSQL_DATABASE }}
