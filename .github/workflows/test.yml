@@ -44,11 +44,13 @@ jobs:
         working-directory: ./backend
         env:
           DB_URL: mysql://${{secrets.MYSQL_USER}}:${{secrets.MYSQL_PASSWORD}}@localhost:3306/${{secrets.MYSQL_DATABASE}}
-        run: npm run start &
+        run: npm run start
   
   build:
     name: building the frontend
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
 
       - name: Checkout code
