@@ -42,7 +42,7 @@ jobs:
 
       - name: Run an audit
         working-directory: ./backend
-        run: npm audit fix
+        run: npm audit --audit-level=high
 
       - name: Run ESLint
         working-directory: ./backend
@@ -70,7 +70,7 @@ jobs:
 
       - name: Run an audit
         working-directory: ./frontend
-        run: npm audit fix
+        run: npm audit --audit-level=high
 
       - name: Run ESLint
         working-directory: ./frontend
