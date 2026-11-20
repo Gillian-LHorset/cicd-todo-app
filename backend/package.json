@@ -15,7 +15,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "bcrypt": "^5.1.1",
+    "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.7",
     "express": "^4.21.1",
@@ -30,7 +30,7 @@
     "eslint": "^9.13.0",
     "jest": "^29.7.0",
     "prettier": "^3.5.3",
-    "sqlite3": "^5.1.7",
+    "sqlite3": "^6.0.1",
     "supertest": "^7.0.0"
   },
   "jest": {
@@ -54,5 +54,8 @@
     "mongodbMemoryServer": {
       "debug": "0"
     }
+  },
+  "overrides": {
+    "uuid": "^11.1.1"
   }
 }
