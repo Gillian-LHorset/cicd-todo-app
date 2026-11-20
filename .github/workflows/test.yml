@@ -69,7 +69,7 @@ jobs:
         run: npm i
 
       - name: Run an audit
-        working-directory: ./backend
+        working-directory: ./frontend
         run: npm audit --fix
 
       - name: Run ESLint
