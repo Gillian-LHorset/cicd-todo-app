@@ -49,7 +49,9 @@ const editor = useEditor({
   extensions: [
     StarterKit.configure({
       blockquote: false,
-      history: false,
+      undoRedo: false,
+      underline: false,
+      link: false,
       paragraph: false,
       bold: false,
       orderedList: false,

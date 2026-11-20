@@ -19,16 +19,16 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.1.5",
-    "@tiptap/extension-bold": "^2.11.5",
-    "@tiptap/extension-bullet-list": "^2.11.5",
-    "@tiptap/extension-link": "^2.11.5",
-    "@tiptap/extension-ordered-list": "^2.11.5",
-    "@tiptap/extension-paragraph": "^2.11.5",
-    "@tiptap/extension-placeholder": "^2.11.5",
-    "@tiptap/extension-underline": "^2.11.5",
-    "@tiptap/pm": "^2.11.5",
-    "@tiptap/starter-kit": "^2.11.5",
-    "@tiptap/vue-3": "^2.11.5",
+    "@tiptap/extension-bold": "^3.34.0",
+    "@tiptap/extension-bullet-list": "^3.34.0",
+    "@tiptap/extension-link": "^3.34.0",
+    "@tiptap/extension-ordered-list": "^3.34.0",
+    "@tiptap/extension-paragraph": "^3.34.0",
+    "@tiptap/extension-placeholder": "^3.34.0",
+    "@tiptap/extension-underline": "^3.34.0",
+    "@tiptap/pm": "^3.34.0",
+    "@tiptap/starter-kit": "^3.34.0",
+    "@tiptap/vue-3": "^3.34.0",
     "@vueform/toggle": "^2.1.4",
     "@vuepic/vue-datepicker": "^11.0.2",
     "@vueuse/core": "^11.1.0",
@@ -45,7 +45,7 @@
     "@tailwindcss/vite": "^4.0.17",
     "@tsconfig/node20": "^20.1.4",
     "@types/jsdom": "^21.1.7",
-    "@types/node": "^20.16.11",
+    "@types/node": "^22.19.0",
     "@vitejs/plugin-vue": "^5.1.4",
     "@vitejs/plugin-vue-jsx": "^4.0.1",
     "@vitest/eslint-plugin": "1.1.7",
@@ -58,7 +58,7 @@
     "eslint-plugin-cypress": "^4.0.0",
     "eslint-plugin-vue": "^9.29.0",
     "jsdom": "^25.0.1",
-    "npm-run-all2": "^6.2.3",
+    "npm-run-all2": "^9.0.4",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "rollup-plugin-visualizer": "^5.14.0",
@@ -67,10 +67,15 @@
     "tailwindcss": "^4.0.17",
     "typescript": "~5.5.4",
     "vite": "^6.2.0",
-    "vitest": "^3.0.7",
-    "vue-tsc": "^2.1.6"
+    "vitest": "^5.1.1",
+    "vue-tsc": "^3.3.14"
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "allowScripts": {
+    "cypress@15.21.2": true,
+    "esbuild@0.25.1": true,
+    "vue-demi@0.14.10": true
+  }
 }
